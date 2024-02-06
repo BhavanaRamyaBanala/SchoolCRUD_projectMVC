@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SchoolCrud_MVCproject2.Models.Class>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.classID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.className)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.classID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.className)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.classID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.classID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.classID })
+        </td>
+    </tr>
+}
+
+</table>
